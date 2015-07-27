@@ -45,14 +45,16 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Humans + Technology</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <p>As we become more and more dependent as a species on the technologies and infrastructure around us, it is especially critical to note the trends in the destructive forces that could bring these systems down.</p>
+
+<p>While this dependence on technology could be seen as a crutch, it can also empower us to prepare ourselves for what&#39;s to come.</p>
+
+<h2>Data Science To The Rescue!</h2>
+
+<p>Data science is one of these tools. By taking massive data sets and organizing them in an intuitive, interactive, and quick-to-grasp reports and visualizations we can better use the information that we already have, and determine what more we might need.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -60,17 +62,53 @@
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Question 1</h2>
+    <h2>An Example: Disasters</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>One example is the <a href="https://www.fema.gov/openfema-dataset-disaster-declarations-summaries-v1">FEMA Disaster Declarations data set</a> that has been collected in the United States, documenting all declared disasters since 1953. For instance, we can generate a static chart (using only 2 lines of R!) and gain some insights:</p>
+
+<pre><code class="r">data &lt;- read.csv(&quot;data/DisasterDeclarationsSummaries.csv&quot;)
+barplot(table(data$incidentType), main=&quot;Disaster Frequency by Type&quot;, las=2, cex.names=0.5)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<p>Through examining this static chart, we can see that Fire Storms, Floods, and Hurricanes are the top types of disasters we have seen and might want to look into preparing for going forward.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>One Step Further: Dynamic Applications</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If the leap from a collection of data to some clear insights from a static chart is great, the addition of independent and natural interaction with the data is phenomenal.</p>
+
+<p>We can <a href="https://grasser.shinyapps.io/fema-disasters">take a look here</a> at an application that adds the ability to map the data we explored in the last slide to a physical place and a time range as well.  As we add layers like this, we have the potential for more insights and breakthroughs, which could well lead to better efficiency in preparing, and even saved lives!</p>
+
+<p><a href="https://grasser.shinyapps.io/fema-disasters"><img src="fema_map.png" alt="Map Screenshot"></a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>A Quiz</h2>
   </hgroup>
   <article data-timings="">
     
 <div class="quiz quiz-single well ">
-  <p>What is 1 + 1?</p>
+  <p>Visit <a href="https://grasser.shinyapps.io/fema-disasters">the interactive FEMA historical disaster map referenced on the previous slide</a> in order to answer the following:</p>
+
+<p>Which state had the most Fire-related disaster incidents between Jan 1, 1984 and today?</p>
 
 <ol>
-<li>1 </li>
-<li><em>2</em></li>
-<li>3</li>
+<li>California</li>
+<li><em>Texas</em></li>
+<li>Florida</li>
 </ol>
 
   <button class="quiz-submit btn btn-primary">Submit</button>
@@ -79,11 +117,11 @@
   <button class="quiz-clear btn btn-danger">Clear</button>
   
   <div class="quiz-hint">
-  <p>This is a hint</p>
+  <p>Make sure you set the date parameters and filters correctly in the application!</p>
 
 </div>
 <div class="quiz-explanation">
-  <p>This is an explanation</p>
+  <p>Correct! Texas had the most (900+) Fire incidents since January 1, 1984. We can find this answer by setting the date range in the application, unchecking all Incident boxes other than &quot;Fire,&quot; which we make sure stays checked. By examining the resulting map, we can clearly see that Texas stands out as bright red indicating the highest incidence.</p>
 
 </div>
 </div>
@@ -97,14 +135,26 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Humans + Technology'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Question 1'>
+        data-slide=2 title='An Example: Disasters'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='One Step Further: Dynamic Applications'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='A Quiz'>
+         4
       </a>
     </li>
   </ul>
